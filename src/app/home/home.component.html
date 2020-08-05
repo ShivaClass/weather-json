@@ -1,0 +1,105 @@
+<div class="container">
+        <h1>{{title}}</h1>
+    <form [formGroup]="myGroup">
+        <div class="form-group">
+            <label>Select your City:</label>
+            <select (change)="selectChangeHandler($event)" class="form-control" formControlName="city">
+                <option selected>Select your city</option>
+                <option *ngFor="let value of values">{{value}}</option>
+                <!-- <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Bengaluru">Bengaluru</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="London">London</option>
+                <option value="New York">New York</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Sydney">Sydney</option>
+                <option value="Wellington">Wellington </option>
+                <option value="Nagasaki">Nagasaki</option> -->
+            </select>
+           
+        </div>
+    </form>
+    
+    <!-- <p>City name:  <b>{{forecasts?.city?.name}}</b></p>
+    <div *ngFor="let forecast of forecasts?.list;index as i">
+        <div *ngIf="i">
+                <div>
+                    {{i}}
+                </div>
+                <p>Date: <b>{{forecast?.dt_txt}}</b></p>
+                <p>City Temp:     <b>{{forecast?.main?.temp}}</b></p>
+                <p>City Tem_max: <b>{{forecast?.main?.temp_max}}</b></p>
+                <p>City Tem_min: : <b>{{forecast?.main?.temp_min}}</b></p>
+                <p>City Humidity:  <b>{{forecast?.main?.humidity}}</b></p>
+        </div>
+    </div> -->
+
+    <table class="table table-trapped">
+        <thead> <b>City Name : {{forecasts?.city?.name}}</b>
+            <tr>
+                <th>Date & Time</th>
+                <th>City Max-Temp</th>
+                <th>City Min-Temp</th>
+                <th>City Humidity</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let forecast of forecasts?.list;index as i">
+            <tr *ngIf="i <=2" > 
+                
+                    <td>{{forecast?.dt_txt}}</td>
+                    <td>{{forecast?.main?.temp_max}}</td>
+                    <td>{{forecast?.main?.temp_min}}</td>
+                    <td>{{forecast?.main?.humidity}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+   
+</div>
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+   
+
+
